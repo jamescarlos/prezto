@@ -11,3 +11,28 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+# Composer Alias using HHVM
+#alias composer="hhvm -v ResourceLimit.SocketDefaultTimeout=30 -v Http.SlowQueryThreshold=30000 /usr/local/bin/composer"
+
+# Load RVM into your shell session as a function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# autojump
+[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+
+# set up default editor
+export EDITOR='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w'
+
+# Customize to your needs...
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:~/bin:~/.composer/vendor/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/lib/node_modules:/usr/local/mysql/bin:/usr/local/share/npm/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+
+export PATH="$HOME/.deliver/bin:$PATH"
+
+# Add homebrew to the completion path
+fpath=("/usr/local/bin/" $fpath)
